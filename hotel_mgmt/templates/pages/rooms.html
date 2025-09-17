@@ -1,0 +1,26 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h2>Available Rooms</h2>
+
+<div class="room-list">
+  {% for room in rooms %}
+    <div class="room-card">
+      <img src="{{ room.image }}" alt="{{ room.name }}" style="width:100%; border-radius:8px;">
+
+      <h3>
+        {{ room.name }} – {{ room.room_type }}
+      </h3>
+
+      <p>
+        {{ room.availability_status }}
+        {% if room.custom_base_rate and room.custom_currency %}
+          – {{ frappe.format_value(room.custom_base_rate, {"fieldtype": "Currency", "currency": room.custom_currency}) }}
+        {% endif %}
+      </p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
+bench --site hotel.local restart
+

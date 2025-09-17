@@ -1,0 +1,13 @@
+/* نجبر الخلفية على البقاء */
+html body {
+    background: #fff !important; /* Use white or set to inherit for default */
+    /* background: inherit !important; */
+}
+
+/* نلغي أي خلفية للحاويات */
+html body .page-container,
+html body .layout-main-section,
+html body .desk-container {
+    background: transparent !important;
+}
+

@@ -1,0 +1,153 @@
+{
+ "doctype": "DocType",
+ "name": "Company Profile",
+ "module": "Hotel",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "field_order": [
+  "identity_section",
+  "company_name",
+  "company_type",
+  "registration_no",
+  "tax_id",
+  "contact_section",
+  "phone",
+  "email",
+  "website",
+  "address_section",
+  "addresses",
+  "contract_section",
+  "credit_limit",
+  "payment_terms",
+  "discount",
+  "rate_code",
+  "system_section",
+  "erpnext_customer"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "label": "Company Type",
+   "options": "\nCorporate\nGovernment\nTravel Agency\nSupplier\nOther"
+  },
+  {
+   "fieldname": "registration_no",
+   "fieldtype": "Data",
+   "label": "Registration No"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Addresses"
+  },
+  {
+   "fieldname": "addresses",
+   "fieldtype": "Table",
+   "label": "Addresses",
+   "options": "Dynamic Link"
+  },
+  {
+   "fieldname": "contract_section",
+   "fieldtype": "Section Break",
+   "label": "Contract / Business"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount %"
+  },
+  {
+   "fieldname": "rate_code",
+   "fieldtype": "Data",
+   "label": "Rate Code"
+  },
+  {
+ "fieldname": "tax_section",
+ "fieldtype": "Section Break",
+ "label": "Tax Information"
+},
+{
+ "fieldname": "tax_id",
+ "fieldtype": "Data",
+ "label": "Tax ID"
+},
+{
+ "fieldname": "tax_category",
+ "fieldtype": "Link",
+ "label": "Tax Category",
+ "options": "Tax Category"
+},
+{
+ "fieldname": "tax_withholding_category",
+ "fieldtype": "Link",
+ "label": "Tax Withholding Category",
+ "options": "Tax Withholding Category"
+},
+  {
+   "fieldname": "system_section",
+   "fieldtype": "Section Break",
+   "label": "System",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "read": 1,
+   "write": 1,
+   "delete": 1
+  }
+ ]
+}

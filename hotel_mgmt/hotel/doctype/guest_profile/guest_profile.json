@@ -1,0 +1,346 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 06:23:01.393721",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_wtcc",
+  "amended_from",
+  "section_break_sojq",
+  "disabled",
+  "identity_section",
+  "full_name",
+  "first_name",
+  "last_name",
+  "column_break_truz",
+  "gender",
+  "date_of_birth",
+  "nationality",
+  "language",
+  "contact_section",
+  "mobile",
+  "column_break_yarv",
+  "email",
+  "column_break_whff",
+  "phone_alt",
+  "column_break_lozo",
+  "address",
+  "ids_section",
+  "id_type",
+  "column_break_roqm",
+  "id_number",
+  "column_break_dmsx",
+  "id_expiry",
+  "preferences_section",
+  "smoking_preference",
+  "bed_preference",
+  "column_break_mmgq",
+  "floor_preference",
+  "amenities_preferences",
+  "loyalty_and_vip_section",
+  "vip_level",
+  "blacklisted",
+  "column_break_odst",
+  "loyalty_program",
+  "blacklist_reason",
+  "column_break_ycad",
+  "loyalty_number",
+  "marketing__source_section",
+  "source",
+  "market_segment",
+  "note",
+  "hiddensystem_fields_section",
+  "erpnext_customer",
+  "default_rate_code",
+  "photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_wtcc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Guest Profile",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "column_break_truz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther\nPrefer not to say"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "options": "\n"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "label": "Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_yarv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_alt",
+   "fieldtype": "Data",
+   "label": "Phone (Alt)",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_whff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_lozo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "ids_section",
+   "fieldtype": "Section Break",
+   "label": "IDs"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "\nPassport\nNational ID\nDriver License\nOther"
+  },
+  {
+   "fieldname": "column_break_roqm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "column_break_dmsx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_expiry",
+   "fieldtype": "Date",
+   "label": "ID Expiry"
+  },
+  {
+   "fieldname": "preferences_section",
+   "fieldtype": "Section Break",
+   "label": "Preferences"
+  },
+  {
+   "fieldname": "smoking_preference",
+   "fieldtype": "Select",
+   "label": "Smoking Preference",
+   "options": "\nNon-smoking\nSmoking\nEither"
+  },
+  {
+   "fieldname": "bed_preference",
+   "fieldtype": "Select",
+   "label": "Bed Preference",
+   "options": "\nKing\nQueen\nTwin\nAny"
+  },
+  {
+   "fieldname": "column_break_mmgq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "floor_preference",
+   "fieldtype": "Select",
+   "label": "Floor Preference",
+   "options": "\nLow\nMid\nHigh\nAny"
+  },
+  {
+   "fieldname": "amenities_preferences",
+   "fieldtype": "Table",
+   "label": "Amenities Preferences",
+   "options": "Guest Preference Item"
+  },
+  {
+   "fieldname": "loyalty_and_vip_section",
+   "fieldtype": "Section Break",
+   "label": "Loyalty and VIP"
+  },
+  {
+   "fieldname": "vip_level",
+   "fieldtype": "Select",
+   "label": "VIP Level",
+   "options": "None\nVIP 1\nVIP 2\nVIP 3"
+  },
+  {
+   "fieldname": "loyalty_program",
+   "fieldtype": "Data",
+   "label": "Loyalty Program"
+  },
+  {
+   "fieldname": "loyalty_number",
+   "fieldtype": "Data",
+   "label": "Loyalty Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "blacklisted",
+   "fieldtype": "Check",
+   "label": "Blacklisted"
+  },
+  {
+   "fieldname": "column_break_odst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ycad",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.blacklisted==1",
+   "fieldname": "blacklist_reason",
+   "fieldtype": "Data",
+   "label": "Blacklist Reason"
+  },
+  {
+   "fieldname": "marketing__source_section",
+   "fieldtype": "Section Break",
+   "label": "Marketing / Source"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "\nDirect\nOTA\nTravel\nAgent\nCorporate\nGroup\nWalk-in"
+  },
+  {
+   "fieldname": "market_segment",
+   "fieldtype": "Select",
+   "label": "Market Segment",
+   "options": "\nLeisure\nBusiness\nGroup\nCrew\nLong Stay"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "fieldname": "hiddensystem_fields_section",
+   "fieldtype": "Section Break",
+   "label": "Hidden/system fields"
+  },
+  {
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "default_rate_code",
+   "fieldtype": "Data",
+   "label": "Default Rate Code"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "section_break_sojq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2025-09-05 16:24:01.061100",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Guest Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 0,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

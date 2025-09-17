@@ -1,0 +1,251 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-03 10:18:38.420895",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_hoji",
+  "workflow_state",
+  "section_break_vygh",
+  "status",
+  "booking_section",
+  "booking_date",
+  "column_break_wdrc",
+  "customer",
+  "column_break_saxp",
+  "primary_guest",
+  "profiles_section",
+  "guest_profile",
+  "rate_code",
+  "column_break_cmls",
+  "company_profile",
+  "column_break_tljq",
+  "group_profile",
+  "column_break_ksje",
+  "agent_profile",
+  "stay_section",
+  "check_in_date",
+  "column_break_fwbz",
+  "check_out_date",
+  "column_break_ksgm",
+  "room_type",
+  "column_break_frah",
+  "room",
+  "column_break_izie",
+  "nights",
+  "section_break_rzqr",
+  "nightly_rate",
+  "column_break_fclx",
+  "total_amount",
+  "section_break_swnr",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_swnr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Reservation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "booking_section",
+   "fieldtype": "Section Break",
+   "label": "Booking"
+  },
+  {
+   "default": "Today",
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "column_break_wdrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_saxp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_guest",
+   "fieldtype": "Data",
+   "label": "Primary Guest"
+  },
+  {
+   "fieldname": "stay_section",
+   "fieldtype": "Section Break",
+   "label": "Stay"
+  },
+  {
+   "fieldname": "check_in_date",
+   "fieldtype": "Date",
+   "label": "Check in Date"
+  },
+  {
+   "fieldname": "check_out_date",
+   "fieldtype": "Date",
+   "label": "Check out Date"
+  },
+  {
+   "fieldname": "column_break_fwbz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_izie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nights",
+   "fieldtype": "Int",
+   "label": "Nights",
+   "read_only": 1
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Room Type"
+  },
+  {
+   "fieldname": "room",
+   "fieldtype": "Link",
+   "label": "Room",
+   "options": "Room"
+  },
+  {
+   "fieldname": "nightly_rate",
+   "fieldtype": "Currency",
+   "label": "Nightly Rate"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nConfirmed\nChecked-in\nChecked-out\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "profiles_section",
+   "fieldtype": "Section Break",
+   "label": "Profiles"
+  },
+  {
+   "fieldname": "guest_profile",
+   "fieldtype": "Link",
+   "label": "Guest Profile",
+   "options": "Guest Profile"
+  },
+  {
+   "fieldname": "company_profile",
+   "fieldtype": "Link",
+   "label": "Company Profile",
+   "options": "Company Profile"
+  },
+  {
+   "fieldname": "column_break_cmls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "group_profile",
+   "fieldtype": "Link",
+   "label": "Group Profile",
+   "options": "Group Profile"
+  },
+  {
+   "fieldname": "agent_profile",
+   "fieldtype": "Link",
+   "label": "Agent Profile",
+   "options": "Travel Agent Profile"
+  },
+  {
+   "fieldname": "rate_code",
+   "fieldtype": "Link",
+   "label": "Rate Code",
+   "options": "Rate Code"
+  },
+  {
+   "fieldname": "column_break_tljq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ksje",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ksgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_frah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rzqr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_fclx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vygh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hoji",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-07 08:50:38.924888",
+ "modified_by": "ahmed.ramadan@sahl-tech.com",
+ "module": "Hotel",
+ "name": "Reservation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

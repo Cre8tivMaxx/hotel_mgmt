@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 08:07:48.842693",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "guest_name",
+  "room_type",
+  "assigned_room",
+  "column_break_ocen",
+  "check_in_date",
+  "check_out_date",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Guest Name"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Room Type",
+   "options": "Room Type"
+  },
+  {
+   "fieldname": "assigned_room",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Assigned Room",
+   "options": "Room"
+  },
+  {
+   "fieldname": "column_break_ocen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_in_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Check in Date"
+  },
+  {
+   "fieldname": "check_out_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Check out Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nReserved\nChecked-in\nChecked-out\nCancelled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-05 08:17:50.444957",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Rooming List",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

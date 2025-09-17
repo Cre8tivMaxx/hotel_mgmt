@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 10:17:59.318778",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "day_type",
+  "rate",
+  "extra_adult_charge",
+  "extra_child_charge"
+ ],
+ "fields": [
+  {
+   "fieldname": "day_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Day Type",
+   "options": "\nWeekday\nWeekend\nHoliday"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "extra_adult_charge",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Extra Adult Charge",
+   "options": "\n"
+  },
+  {
+   "fieldname": "extra_child_charge",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Extra Child Charge",
+   "options": "\n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-05 10:20:11.241365",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Rate Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

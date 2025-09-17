@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-03 10:17:40.367961",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ekuz",
+  "active",
+  "section_break_kbbr",
+  "room_type_name",
+  "column_break_dzaz",
+  "base_rate",
+  "column_break_fzmx",
+  "currency",
+  "column_break_wubf",
+  "capacity",
+  "column_break_kufr",
+  "amenities",
+  "section_break_vfnl",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "room_type_name",
+   "fieldtype": "Select",
+   "label": "Room Type Name",
+   "options": "\nSingle Room\nDouble Room\nTwin Room\nTriple Room\nQuad Room\nDeluxe Room\nExecutive Room\nSuite\nFamily Room\nStudio Room\nConnecting Room\nAccessible Room\nPenthouse\nPresidential Suite"
+  },
+  {
+   "fieldname": "column_break_dzaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "base_rate",
+   "fieldtype": "Currency",
+   "label": "Base Rate"
+  },
+  {
+   "fieldname": "column_break_fzmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity"
+  },
+  {
+   "fieldname": "column_break_kufr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Select",
+   "label": "Amenities",
+   "options": "\nSea View\nGarden View\nPool View\nCity View\nMountain View\nBeachfront\nBalcony\nTerrace\nPrivate Pool\n"
+  },
+  {
+   "fieldname": "section_break_ekuz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "1",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "section_break_vfnl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_kbbr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "column_break_wubf",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-07 06:38:39.636182",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Room Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

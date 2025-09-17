@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 06:46:16.941821",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "amenity",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "amenity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Amenity"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-05 07:08:48.833386",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Guest Preference Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

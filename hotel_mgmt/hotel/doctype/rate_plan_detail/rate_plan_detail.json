@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 10:39:06.939069",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "meal_plan",
+  "included",
+  "extra_charge"
+ ],
+ "fields": [
+  {
+   "fieldname": "meal_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Meal Plan",
+   "options": "Meal Plan"
+  },
+  {
+   "default": "0",
+   "fieldname": "included",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Included",
+   "options": "Meal Plan"
+  },
+  {
+   "fieldname": "extra_charge",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Extra Charge"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-05 10:43:18.564666",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Rate Plan Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

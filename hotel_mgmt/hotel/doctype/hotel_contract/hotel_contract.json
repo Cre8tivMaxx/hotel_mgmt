@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-08 18:00:17.147054",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ughq",
+  "amended_from",
+  "contract_type",
+  "remarks",
+  "status",
+  "agent_profile",
+  "company_profile",
+  "rate_code",
+  "room_type",
+  "start_date",
+  "end_date",
+  "number_of_rooms",
+  "minimum_pickup",
+  "release_period"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ughq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Hotel Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type",
+   "options": "\nCommitment\nAllotment"
+  },
+  {
+   "fieldname": "agent_profile",
+   "fieldtype": "Link",
+   "label": "Agent Profile",
+   "options": "Travel Agent Profile"
+  },
+  {
+   "fieldname": "company_profile",
+   "fieldtype": "Link",
+   "label": "Company Profile",
+   "options": "Company Profile"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "description": "How many rooms/night allocated or committed",
+   "fieldname": "number_of_rooms",
+   "fieldtype": "Int",
+   "label": "Number of Rooms"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Room Type"
+  },
+  {
+   "fieldname": "rate_code",
+   "fieldtype": "Link",
+   "label": "Rate Code",
+   "options": "Rate Code"
+  },
+  {
+   "description": "(Only for Allotment) Days before arrival when unsold rooms are released",
+   "fieldname": "release_period",
+   "fieldtype": "Int",
+   "label": "Release Period"
+  },
+  {
+   "description": "(Optional KPI) for Commitment: expected usage",
+   "fieldname": "minimum_pickup",
+   "fieldtype": "Int",
+   "label": "Minimum Pickup"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nActive\nExpired\nCancelled"
+  },
+  {
+   "description": "Notes about contract terms",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks",
+   "options": "\nCommitment\nAllotment"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-08 18:09:31.583196",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Hotel Contract",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-05 07:29:48.097105",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kaj8",
+  "amended_from",
+  "section_break_hnuo",
+  "agent_name",
+  "agency_type",
+  "column_break_oauo",
+  "iata_number",
+  "license_number",
+  "contact_section",
+  "phone",
+  "column_break_czbi",
+  "email",
+  "column_break_bhxt",
+  "website",
+  "column_break_jbvr",
+  "address",
+  "contract__business_section",
+  "commission_",
+  "credit_limit",
+  "column_break_vyab",
+  "rate_code",
+  "payment_terms",
+  "notes_section",
+  "remarks",
+  "hiddensystem_section",
+  "erpnext_customer"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kaj8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Travel Agent Profile",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_hnuo",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name"
+  },
+  {
+   "fieldname": "iata_number",
+   "fieldtype": "Data",
+   "label": "IATA Number"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License Number"
+  },
+  {
+   "fieldname": "agency_type",
+   "fieldtype": "Select",
+   "label": "Agency Type",
+   "options": "\nLocal\nInternational\nOTA (Online)\nOther"
+  },
+  {
+   "fieldname": "column_break_oauo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_czbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bhxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jbvr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract__business_section",
+   "fieldtype": "Section Break",
+   "label": "Contract / Business"
+  },
+  {
+   "fieldname": "commission_",
+   "fieldtype": "Float",
+   "label": "Commission %"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Currency",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "column_break_vyab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Select",
+   "label": "Payment Terms",
+   "options": "\nCash\nCredit 7 Days\nCredit 14 Days\nCredit 30 Days"
+  },
+  {
+   "fieldname": "rate_code",
+   "fieldtype": "Data",
+   "label": "Rate Code"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "hiddensystem_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Hidden/system"
+  },
+  {
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-05 07:39:02.641003",
+ "modified_by": "Administrator",
+ "module": "Hotel",
+ "name": "Travel Agent Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
