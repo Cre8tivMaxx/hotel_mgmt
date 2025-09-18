@@ -36,3 +36,7 @@ scheduler_events = {
         "hotel_mgmt.api.expire_hotel_contracts"
     ]
 }
+app_include_js = [
+    "public/js/guest_profile.js",
+    "public/js/hotel.js"
+]
