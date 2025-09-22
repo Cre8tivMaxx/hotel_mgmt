@@ -1,0 +1,160 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "creation": "2025-09-19 11:15:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "room_number",
+    "section_status",
+    "housekeeping_status",
+    "cb1",
+    "fo_status",
+    "cb2",
+    "reservation_status",
+    "section_room",
+    "room_type",
+    "cb3",
+    "floor",
+    "cb4",
+    "room_class",
+    "section_other",
+    "am_pm",
+    "cb5",
+    "return_status",
+    "cb6",
+    "features"
+  ],
+  "fields": [
+
+    {
+      "fieldname": "room_number",
+      "label": "Room Number",
+      "fieldtype": "Link",
+      "options": "Room"
+    },
+
+    {
+      "fieldname": "section_status",
+      "label": "Room Status Section",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "housekeeping_status",
+      "label": "Housekeeping Status",
+      "fieldtype": "Select",
+      "options": "Clean\nDirty\nPickup\nInspected\nOut of Order\nOut of Service"
+    },
+    {
+      "fieldname": "cb1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "fo_status",
+      "label": "Front Office Status",
+      "fieldtype": "Select",
+      "options": "Vacant\nOccupied"
+    },
+    {
+      "fieldname": "cb2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reservation_status",
+      "label": "Reservation Status",
+      "fieldtype": "Select",
+      "options": "Not Reserved\nArrival\nArrived\nStay Over\nDay Use\nDue Out\nDeparted"
+    },
+
+    {
+      "fieldname": "section_room",
+      "label": "Room Details",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "room_type",
+      "label": "Room Type",
+      "fieldtype": "Link",
+      "options": "Room Type"
+    },
+    {
+      "fieldname": "cb3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "floor",
+      "label": "Floor",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "cb4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "room_class",
+      "label": "Room Class",
+      "fieldtype": "Data"
+    },
+
+    {
+      "fieldname": "section_other",
+      "label": "Other Info",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "am_pm",
+      "label": "Shift",
+      "fieldtype": "Select",
+      "options": "AM\nPM"
+    },
+    {
+      "fieldname": "cb5",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "return_status",
+      "label": "Return Status",
+      "fieldtype": "Select",
+      "options": "Clean\nInspected"
+    },
+    {
+      "fieldname": "cb6",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "features",
+      "label": "Room Features",
+      "fieldtype": "Table",
+      "options": "Room Feature"
+    }
+
+  ],
+  "grid_page_length": 50,
+  "index_web_pages_for_search": 1,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2025-09-19 11:15:00.000000",
+  "modified_by": "Administrator",
+  "module": "Hotel",
+  "name": "Housekeeping",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

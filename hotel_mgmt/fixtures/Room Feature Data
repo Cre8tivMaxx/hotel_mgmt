@@ -1,0 +1,72 @@
+[
+  {
+    "doctype": "Room Feature",
+    "feature_name": "TV",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Flat screen"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "WiFi",
+    "available": 1,
+    "condition": "Good",
+    "notes": "High speed internet"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Minibar",
+    "available": 1,
+    "condition": "Needs Repair",
+    "notes": "Cooling is weak"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Air Conditioning",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Central AC"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Safe Box",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Electronic lock"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Balcony",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Sea view"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Telephone",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Direct dial"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Coffee/Tea Maker",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Electric kettle included"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Hairdryer",
+    "available": 1,
+    "condition": "Good",
+    "notes": "Standard hotel dryer"
+  },
+  {
+    "doctype": "Room Feature",
+    "feature_name": "Iron/Iron Board",
+    "available": 0,
+    "condition": "Broken",
+    "notes": "Needs replacement"
+  }
+]

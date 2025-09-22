@@ -1,10 +1,11 @@
-# ~/frappe-bench/apps/hotel_mgmt/hotel_mgmt/api.py
-
-
+# -------------------------------------------------------------------
+# Hotel Management App - api.py
+# Last Updated: 2025-09-22 03:35 PM (UTC+3)
+# Author: Sahl (info@sahl-tech.com)
+# -------------------------------------------------------------------
 
 import frappe
-from frappe.utils import cint, flt, nowdate, getdate, add_days
-from datetime import timedelta
+from frappe.utils import cint, flt, nowdate, getdate, add_days, now_datetime
 
 
 # ---------- Reservation Validations ----------
@@ -13,11 +14,11 @@ def reservation_validate(doc, method=None):
         ci = getdate(doc.check_in_date)
         co = getdate(doc.check_out_date)
 
-        # 1) Prevent past check-in
+        # Prevent past check-in
         if ci < getdate(nowdate()):
             frappe.throw("Check-in date cannot be in the past (earlier than today).")
 
-        # 2) Nights calculation
+        # Nights calculation
         doc.nights = (co - ci).days
     else:
         doc.nights = 0
@@ -25,7 +26,7 @@ def reservation_validate(doc, method=None):
     if doc.nights <= 0:
         frappe.throw("Check-out must be after check-in (minimum 1 night).")
 
-    # 3) Calculate amount
+    # Calculate amount
     doc.total_amount = flt(doc.nightly_rate) * cint(doc.nights)
 
 
@@ -41,17 +42,39 @@ def _set_room_fields(room_name, values: dict):
 
 # ---------- Reservation Events ----------
 def reservation_on_submit(doc, method=None):
-    """Called when Reservation is submitted."""
+    """Reflect Reservation into Room and Housekeeping."""
     if not getattr(doc, "room", None):
         return
 
     if doc.status == "Checked-in":
-        _set_room_fields(doc.room, {"occupancy_status": "Occupied"})
+        # Mark room as occupied
+        _set_room_fields(doc.room, {
+            "status": "Occupied",
+            "last_housekeeping_update": now_datetime()
+        })
+
+        # Pre-schedule housekeeping for checkout
+        hk = frappe.new_doc("Housekeeping")
+        hk.room = doc.room
+        hk.room_condition = "Dirty"
+        hk.status = "Scheduled"
+        hk.date = doc.check_out_date
+        hk.insert(ignore_permissions=True)
 
     elif doc.status == "Checked-out":
+        # Create housekeeping record immediately
+        hk = frappe.new_doc("Housekeeping")
+        hk.room = doc.room
+        hk.room_condition = "Dirty"
+        hk.status = "Open"
+        hk.date = nowdate()
+        hk.insert(ignore_permissions=True)
+
+        # Reflect in Room
         _set_room_fields(doc.room, {
-            "occupancy_status": "Vacant",
-            "clean_status": "Dirty"
+            "status": "Dirty",
+            "clean_status": "Dirty",
+            "last_housekeeping_update": now_datetime()
         })
 
 
@@ -61,14 +84,14 @@ def reservation_on_cancel(doc, method=None):
         return
 
     _set_room_fields(doc.room, {
-        "occupancy_status": "Vacant",
-        "clean_status": "Clean"
+        "status": "Available",
+        "clean_status": "Clean",
+        "last_housekeeping_update": now_datetime()
     })
 
 
 def reservation_on_update(doc, method=None):
     """Keep Reservation fields in sync."""
-    # Nights consistency
     if doc.check_in_date and doc.check_out_date:
         ci = getdate(doc.check_in_date)
         co = getdate(doc.check_out_date)
@@ -78,43 +101,33 @@ def reservation_on_update(doc, method=None):
         if nights != doc.nights:
             doc.nights = nights
 
-    # Total amount consistency
     if doc.nightly_rate and doc.nights:
         doc.total_amount = flt(doc.nightly_rate) * cint(doc.nights)
 
-    # Workflow sync
     if doc.workflow_state and doc.status != doc.workflow_state:
         doc.status = doc.workflow_state
 
 
-# ---------- Group Defaults ----------
-@frappe.whitelist()
-def get_group_defaults(group_profile: str):
-    gp = frappe.db.get_value(
-        "Group Profile",
-        group_profile,
-        ["arrival_date", "departure_date", "rate_code", "meal_plan"],
-        as_dict=True
-    ) or {}
-    return {
-        "arrival_date": gp.get("arrival_date"),
-        "departure_date": gp.get("departure_date"),
-        "default_rate": _rate_from_code(gp.get("rate_code")),
-        "meal_plan": gp.get("meal_plan")
-    }
-
-
-def _rate_from_code(rate_code: str):
-    if not rate_code:
-        return None
-    return frappe.db.get_value("Rate Code", rate_code, "base_rate") \
-        if frappe.db.exists("Rate Code", rate_code) else None
-
-
-# ---------- Housekeeping ----------
+# ---------- Housekeeping Events ----------
 def housekeeping_on_submit(doc, method=None):
-    if getattr(doc, "task_type", "") == "Clean" and doc.room:
-        frappe.db.set_value("Room", doc.room, "clean_status", "Clean")
+    """When a housekeeping record is submitted, update linked Room."""
+    if not getattr(doc, "room", None):
+        return
+
+    condition = doc.room_condition
+
+    if condition == "Clean":
+        _set_room_fields(doc.room, {
+            "status": "Available",
+            "clean_status": "Clean",
+            "last_housekeeping_update": now_datetime()
+        })
+    else:
+        _set_room_fields(doc.room, {
+            "status": condition,
+            "clean_status": condition,
+            "last_housekeeping_update": now_datetime()
+        })
 
 
 # ---------- Nightly Posting ----------
@@ -142,17 +155,21 @@ def post_nightly_charges():
 def check_in(reservation: str):
     res = frappe.get_doc("Reservation", reservation)
     res.db_set("status", "Checked-in")
-    if res.room:
-        frappe.db.set_value("Room", res.room, "occupancy_status", "Occupied")
 
-    # Create housekeeping task for next day
-    task = frappe.new_doc("Housekeeping Task")
-    task.date = getdate(res.check_in_date) + timedelta(days=1)
-    task.shift = "Morning"
-    task.room = res.room
-    task.task_type = "Clean"
-    task.status = "Open"
-    task.insert(ignore_permissions=True)
+    if res.room:
+        frappe.db.set_value("Room", res.room, {
+            "status": "Occupied",
+            "last_housekeeping_update": now_datetime()
+        })
+
+        # Pre-schedule housekeeping for checkout date
+        hk = frappe.new_doc("Housekeeping")
+        hk.room = res.room
+        hk.room_condition = "Dirty"
+        hk.status = "Scheduled"
+        hk.date = res.check_out_date
+        hk.insert(ignore_permissions=True)
+
     return "Checked-in"
 
 
@@ -190,12 +207,9 @@ def make_sales_invoice(reservation: str):
     return si.name
 
 
-import frappe
-from frappe.utils import getdate, nowdate, add_days
-
 # ---------- Allotment Release ----------
 def release_allotments():
-    """Release allotment rooms past release period back to Vacant"""
+    """Release allotment rooms past release period back to Available"""
     today = getdate(nowdate())
 
     contracts = frappe.get_all(
@@ -209,7 +223,6 @@ def release_allotments():
         start_date = c.get("start_date")
 
         if start_date:
-            # release_date = contract start_date - release_period days
             release_date = add_days(start_date, -release_period)
 
             if today >= release_date:
@@ -224,12 +237,14 @@ def release_allotments():
                 )
 
                 for r in reservations:
-                    # Mark reservation as Released
                     frappe.db.set_value("Reservation", r["name"], "status", "Released")
 
-                    # Free up the room (if linked)
                     if r.get("room"):
-                        frappe.db.set_value("Room", r["room"], "occupancy_status", "Vacant")
+                        frappe.db.set_value("Room", r["room"], {
+                            "status": "Available",
+                            "clean_status": "Clean",
+                            "last_housekeeping_update": now_datetime()
+                        })
 
     frappe.db.commit()
 
@@ -246,7 +261,7 @@ def expire_hotel_contracts():
     )
 
     for c in contracts:
-        if c.get("end_date") and getdate(c["end_date"]) <= today:  # <= instead of <
+        if c.get("end_date") and getdate(c["end_date"]) <= today:
             frappe.db.set_value("Hotel Contract", c["name"], {
                 "workflow_state": "Expired",
                 "status": "Expired"
@@ -255,12 +270,8 @@ def expire_hotel_contracts():
     frappe.db.commit()
 
 
-
-
-
-# ---------- Hello World OK----------
+# ---------- Hello World ----------
 @frappe.whitelist()
 def hello_world():
     frappe.msgprint("Hello from Hotel Management App!")
     return "Hello World OK"
-

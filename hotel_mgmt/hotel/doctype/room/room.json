@@ -78,7 +78,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAvailable\nOccupied\nDirty\nInspected\nReserved"
+   "options": "\nAvailable\nOccupied\nDirty\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
   },
   {
    "fieldname": "column_break_tbup",
@@ -123,20 +123,11 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Clean Status",
-   "options": "\nClean\nDirty\nPickup\nInspected"
+   "options": "\nClean\nDirty\nPickup\nInspected\nOut of Service\nOut of Order"
   },
   {
    "fieldname": "column_break_vmel",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "Vacant",
-   "fieldname": "occupancy_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Occupancy Status",
-   "options": "\nVacant\nOccupied"
   },
   {
    "fieldname": "housekeeping_section",

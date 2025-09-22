@@ -1,3 +1,9 @@
+# -------------------------------------------------------------------
+# Hotel Management App - hooks.py
+# Last Updated: 2025-09-22 03:15 PM
+# Author: Sahl (info@sahl-tech.com)
+# -------------------------------------------------------------------
+
 # Basic app info
 app_name = "hotel_mgmt"
 app_title = "Hotel Management"
@@ -8,18 +14,25 @@ app_license = "mit"
 
 required_apps = ["erpnext"]
 
-# Fixtures
-fixtures = ["Custom Field", "Property Setter"]
+# Fixtures (exported data you want to keep in Git)
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Workspace",
+    "Workflow",
+    "Client Script",
+    "Room Feature"
+]
 
 # Doc Events
 doc_events = {
     "Reservation": {
         "validate": "hotel_mgmt.api.reservation_validate",
-        "on_submit": "hotel_mgmt.api.reservation_on_submit",
+        "after_save": "hotel_mgmt.api.reservation_on_submit",
         "on_update": "hotel_mgmt.api.reservation_on_update",
         "on_cancel": "hotel_mgmt.api.reservation_on_cancel",
     },
-    "Housekeeping Task": {
+    "Housekeeping": {   # housekeeping sync
         "on_submit": "hotel_mgmt.api.housekeeping_on_submit",
     },
     "Customer": {
@@ -34,9 +47,24 @@ scheduler_events = {
     "daily": [
         "hotel_mgmt.api.release_allotments",
         "hotel_mgmt.api.expire_hotel_contracts"
+    ],
+    "hourly": [
+        # placeholder for hourly jobs (e.g., sync with channel manager)
+    ],
+    "weekly": [
+        # placeholder for weekly jobs (e.g., housekeeping audit, occupancy report)
     ]
 }
+
+# Include JS & CSS
 app_include_js = [
     "public/js/guest_profile.js",
     "public/js/hotel.js"
 ]
+
+app_include_css = ["/assets/hotel_mgmt/css/dashboard.css"]
+
+# Doctype JS (custom listview indicators)
+doctype_js = {
+    "Room": "public/js/room_indicator.js"
+}

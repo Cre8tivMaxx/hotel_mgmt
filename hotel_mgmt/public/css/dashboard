@@ -1,0 +1,10 @@
+/* Apply only to the chart named "Status" */
+.dashboard-chart[data-chart-name="Status"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+
+/* Optional: increase height just for Status chart */
+.dashboard-chart[data-chart-name="Status"] svg {
+    height: 600px !important;  /* adjust as needed */
+}
