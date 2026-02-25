@@ -1,12 +1,7 @@
 {
- "charts": [
-  {
-   "chart_name": "Profit and Loss",
-   "label": "Profit and Loss"
-  }
- ],
- "content": "[{\"id\":\"VVvJ1lUcfc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rooms\",\"col\":3}},{\"id\":\"Vlj2FZtlHV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Room Type\",\"col\":3}},{\"id\":\"VVVjQVAhPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Reservation\",\"col\":3}},{\"id\":\"DySNdlysIW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Hotel Contract\",\"col\":3}},{\"id\":\"9k1rDm2C0l\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vikWSkNm6_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"_pRdD6kqUG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room\",\"col\":3}},{\"id\":\"pMywM0nhlj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room Type\",\"col\":3}},{\"id\":\"G984SgVRJN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reservation\",\"col\":3}},{\"id\":\"1ArNvt9qhz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Housekeeping\",\"col\":3}},{\"id\":\"OF9WOi1Ppc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"iAwpe-Chra\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Learn \",\"col\":3}},{\"id\":\"UxF1pwLhDG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Hotel Contract\",\"col\":3}},{\"id\":\"B7-uxs8tkU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tHb3yxthkR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"DnNtsmxpty\",\"type\":\"card\",\"data\":{\"card_name\":\"Hotel Masters\",\"col\":4}},{\"id\":\"nKKr6fjgjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Restaurant\",\"col\":4}},{\"id\":\"jTUy8LB0uw\",\"type\":\"card\",\"data\":{\"card_name\":\"Contract\",\"col\":4}},{\"id\":\"KlqilF5R_V\",\"type\":\"card\",\"data\":{\"card_name\":\"Tax Masters\",\"col\":4}},{\"id\":\"Wn2lhs7WLn\",\"type\":\"card\",\"data\":{\"card_name\":\"HouseKeeping\",\"col\":4}},{\"id\":\"PAQMqqNkBM\",\"type\":\"card\",\"data\":{\"card_name\":\"Profiles\",\"col\":4}},{\"id\":\"nDhfcJYbKH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Profit and Loss\",\"col\":12}}]",
- "creation": "2025-09-20 09:01:29.421908",
+ "charts": [],
+ "content": "[{\"id\":\"VVvJ1lUcfc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Rooms\",\"col\":3}},{\"id\":\"Vlj2FZtlHV\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Room Type\",\"col\":3}},{\"id\":\"VVVjQVAhPf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Reservation\",\"col\":3}},{\"id\":\"DySNdlysIW\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Hotel Contract\",\"col\":3}},{\"id\":\"9k1rDm2C0l\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"vikWSkNm6_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"_pRdD6kqUG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room\",\"col\":3}},{\"id\":\"pMywM0nhlj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Room Type\",\"col\":3}},{\"id\":\"G984SgVRJN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reservation\",\"col\":3}},{\"id\":\"1ArNvt9qhz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Housekeeping\",\"col\":3}},{\"id\":\"OF9WOi1Ppc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"iAwpe-Chra\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Learn \",\"col\":3}},{\"id\":\"UxF1pwLhDG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Hotel Contract\",\"col\":3}},{\"id\":\"B7-uxs8tkU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"tHb3yxthkR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"DnNtsmxpty\",\"type\":\"card\",\"data\":{\"card_name\":\"Hotel Masters\",\"col\":4}},{\"id\":\"nKKr6fjgjb\",\"type\":\"card\",\"data\":{\"card_name\":\"Restaurant\",\"col\":4}},{\"id\":\"jTUy8LB0uw\",\"type\":\"card\",\"data\":{\"card_name\":\"Contract\",\"col\":4}},{\"id\":\"KlqilF5R_V\",\"type\":\"card\",\"data\":{\"card_name\":\"Tax Masters\",\"col\":4}},{\"id\":\"Wn2lhs7WLn\",\"type\":\"card\",\"data\":{\"card_name\":\"HouseKeeping\",\"col\":4}},{\"id\":\"PAQMqqNkBM\",\"type\":\"card\",\"data\":{\"card_name\":\"Profiles\",\"col\":4}}]",
+ "creation": "2025-10-04 17:53:59.999283",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -410,7 +405,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Hotel Masters",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -454,17 +449,23 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "rooms",
+   "link_count": 0,
+   "link_to": "rooms",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-22 10:35:48.486167",
+ "modified": "2025-10-06 17:59:59.431634",
  "modified_by": "Administrator",
  "module": "Hotel",
  "name": "Hotel",
  "number_cards": [
-  {
-   "label": "Rooms",
-   "number_card_name": "Rooms"
-  },
   {
    "label": "Hotel Contract",
    "number_card_name": "Hotel Contract"
@@ -512,13 +513,6 @@
    "doc_view": "List",
    "label": "Reservation",
    "link_to": "Reservation",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Room",
-   "link_to": "Room",
    "stats_filter": "[]",
    "type": "DocType"
   },

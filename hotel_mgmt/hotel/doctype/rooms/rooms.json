@@ -1,13 +1,12 @@
 {
  "actions": [],
- "autoname": "format:{building}-{floor}{room_number}-{room_type}",
- "creation": "2025-10-04 17:53:52.826166",
- "default_view": "Image",
+ "allow_rename": 1,
+ "creation": "2025-10-04 14:49:26.126635",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "image",
-  "title",
   "section_break_baol",
   "column_break_fpmz",
   "room_number",
@@ -70,7 +69,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAvailable\nOccupied\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
+   "options": "\nAvailable\nOccupied\nDirty\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
   },
   {
    "fieldname": "column_break_vmel",
@@ -151,6 +150,18 @@
    "label": "Out Of Order Reason"
   },
   {
+   "fieldname": "column_break_lzky",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Clean",
+   "fieldname": "clean_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Clean Status",
+   "options": "\nClean\nDirty\nPickup\nInspected\nOut of Service\nOut of Order"
+  },
+  {
    "default": "0",
    "fieldname": "out_of_service",
    "fieldtype": "Check",
@@ -163,18 +174,6 @@
    "fieldtype": "Small Text",
    "in_list_view": 1,
    "label": "Out Of Service Reason"
-  },
-  {
-   "fieldname": "column_break_lzky",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Clean",
-   "fieldname": "clean_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Clean Status",
-   "options": "\nClean\nDirty\nPickup\nInspected\nOut of Service\nOut of Order"
   },
   {
    "fieldname": "section_break_hdnx",
@@ -225,21 +224,16 @@
    "fieldtype": "Select",
    "label": "Based on Suites",
    "options": "\nStandard Suite\nJunior or Mini Suite\nPenthouse Suite\nBroad Suite\nPresidential Suite"
-  },
-  {
-   "fieldname": "title",
-   "fieldtype": "HTML",
-   "label": "title"
   }
  ],
  "grid_page_length": 50,
  "image_field": "image",
+ "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-07 08:26:11.876720",
+ "modified": "2025-10-04 14:49:26.126635",
  "modified_by": "Administrator",
  "module": "Hotel",
- "name": "Room",
- "naming_rule": "Expression",
+ "name": "rooms",
  "owner": "Administrator",
  "permissions": [
   {
@@ -255,10 +249,8 @@
    "write": 1
   }
  ],
- "route": "room",
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "website_search_field": "room_number"
+ "states": []
 }

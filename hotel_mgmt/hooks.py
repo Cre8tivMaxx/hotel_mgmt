@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------
 # Hotel Management App - hooks.py
-# Last Updated: 2025-09-22 03:15 PM
+# Last Updated: 2025-09-28 04:45 PM
 # Author: Sahl (info@sahl-tech.com)
 # -------------------------------------------------------------------
 
@@ -21,7 +21,11 @@ fixtures = [
     "Workspace",
     "Workflow",
     "Client Script",
-    "Room Feature"
+    "Room Feature",
+    {
+        "dt": "DocType",
+        "filters": [["name", "in", ["Room"]]]
+    }
 ]
 
 # Doc Events
