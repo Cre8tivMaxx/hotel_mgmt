@@ -181,6 +181,12 @@
    "options": "Travel Agent Profile"
   },
   {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "nameing series",
+   "hidden": 1
+  },
+  {
    "fieldname": "rate_code",
    "fieldtype": "Link",
    "label": "Rate Code",
