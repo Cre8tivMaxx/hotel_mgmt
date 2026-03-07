@@ -23,8 +23,7 @@
    "fieldname": "included",
    "fieldtype": "Check",
    "in_list_view": 1,
-   "label": "Included",
-   "options": "Meal Plan"
+   "label": "Included"
   },
   {
    "fieldname": "extra_charge",

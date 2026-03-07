@@ -103,8 +103,7 @@
    "description": "Notes about contract terms",
    "fieldname": "remarks",
    "fieldtype": "Small Text",
-   "label": "Remarks",
-   "options": "\nCommitment\nAllotment"
+   "label": "Remarks"
   }
  ],
  "grid_page_length": 50,

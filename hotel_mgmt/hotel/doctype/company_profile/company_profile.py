@@ -4,8 +4,8 @@
 import frappe
 from frappe.model.document import Document
 
-class CompanyProfile(Document):
 
+class CompanyProfile(Document):
     def after_insert(self):
         self.sync_customer()
 
@@ -46,11 +46,11 @@ class CompanyProfile(Document):
                     address_doc = frappe.get_doc("Address", addr_link.link_name)
 
                     # Add link to customer if not already linked
-                    if not any(l.link_doctype == "Customer" and l.link_name == customer.name for l in address_doc.links):
-                        address_doc.append("links", {
-                            "link_doctype": "Customer",
-                            "link_name": customer.name
-                        })
+                    if not any(
+                        l.link_doctype == "Customer" and l.link_name == customer.name
+                        for l in address_doc.links
+                    ):
+                        address_doc.append("links", {"link_doctype": "Customer", "link_name": customer.name})
                         address_doc.save(ignore_permissions=True)
 
                     # Set first address as primary
@@ -58,4 +58,6 @@ class CompanyProfile(Document):
                         customer.customer_primary_address = address_doc.name
                         customer.save(ignore_permissions=True)
 
-        frappe.msgprint(f"✅ Customer <b>{customer.name}</b> created/updated and linked with addresses + tax info.")
+        frappe.msgprint(
+            f"✅ Customer <b>{customer.name}</b> created/updated and linked with addresses + tax info."
+        )

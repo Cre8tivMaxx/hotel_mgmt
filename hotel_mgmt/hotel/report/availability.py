@@ -1,22 +1,29 @@
 import frappe
 from frappe.utils import getdate
 
+
 def execute(filters=None):
     filters = filters or {}
     room = filters.get("room")
     start = getdate(filters.get("start_date")) if filters.get("start_date") else None
-    end   = getdate(filters.get("end_date"))   if filters.get("end_date")   else None
+    end = getdate(filters.get("end_date")) if filters.get("end_date") else None
 
     columns = [
-        {"label": "Room",         "fieldname": "room",          "fieldtype": "Link", "options": "Room", "width": 140},
-        {"label": "Check In",     "fieldname": "check_in_date", "fieldtype": "Date",                   "width": 110},
-        {"label": "Check Out",    "fieldname": "check_out_date","fieldtype": "Date",                   "width": 110},
-        {"label": "Status",       "fieldname": "status",        "fieldtype": "Data",                   "width": 110},
-        {"label": "Guest",        "fieldname": "primary_guest", "fieldtype": "Data",                   "width": 180},
-        {"label": "Customer",     "fieldname": "customer",      "fieldtype": "Link", "options": "Customer", "width": 160},
-        {"label": "Nights",       "fieldname": "nights",        "fieldtype": "Int",                    "width": 70},
-        {"label": "Nightly Rate", "fieldname": "nightly_rate",  "fieldtype": "Currency",               "width": 110},
-        {"label": "Total",        "fieldname": "total_amount",  "fieldtype": "Currency",               "width": 110},
+        {"label": "Room", "fieldname": "room", "fieldtype": "Link", "options": "Room", "width": 140},
+        {"label": "Check In", "fieldname": "check_in_date", "fieldtype": "Date", "width": 110},
+        {"label": "Check Out", "fieldname": "check_out_date", "fieldtype": "Date", "width": 110},
+        {"label": "Status", "fieldname": "status", "fieldtype": "Data", "width": 110},
+        {"label": "Guest", "fieldname": "primary_guest", "fieldtype": "Data", "width": 180},
+        {
+            "label": "Customer",
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "options": "Customer",
+            "width": 160,
+        },
+        {"label": "Nights", "fieldname": "nights", "fieldtype": "Int", "width": 70},
+        {"label": "Nightly Rate", "fieldname": "nightly_rate", "fieldtype": "Currency", "width": 110},
+        {"label": "Total", "fieldname": "total_amount", "fieldtype": "Currency", "width": 110},
     ]
 
     # Build WHERE parts lazily
@@ -61,4 +68,3 @@ def execute(filters=None):
     )
 
     return columns, rows
-

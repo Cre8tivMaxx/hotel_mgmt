@@ -1,12 +1,11 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2025-09-03 10:18:38.420895",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "column_break_hoji",
-  "workflow_state",
   "section_break_vygh",
   "status",
   "booking_section",
@@ -20,6 +19,7 @@
   "rate_code",
   "column_break_cmls",
   "company_profile",
+  "contract",
   "column_break_tljq",
   "group_profile",
   "column_break_ksje",
@@ -38,8 +38,11 @@
   "nightly_rate",
   "column_break_fclx",
   "total_amount",
+  "charges_section",
+  "reservation_charge",
   "section_break_swnr",
-  "amended_from"
+  "amended_from",
+  "naming_series"
  ],
  "fields": [
   {
@@ -144,7 +147,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nDraft\nConfirmed\nChecked-in\nChecked-out\nCancelled",
+   "options": "\nDraft\nPending\nConfirmed\nChecked-in\nChecked-out\nReleased\nRejected\nCancelled",
    "read_only": 1
   },
   {
@@ -183,8 +186,9 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "nameing series",
-   "hidden": 1
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RES-.YYYY.-.#####"
   },
   {
    "fieldname": "rate_code",
@@ -221,19 +225,33 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_hoji",
-   "fieldtype": "Column Break",
-   "hidden": 1
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Hotel Contract",
+   "options": "Hotel Contract"
+  },
+  {
+   "fieldname": "charges_section",
+   "fieldtype": "Section Break",
+   "label": "Charges"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reservation_charge",
+   "fieldtype": "Table",
+   "label": "Reservation Charges",
+   "options": "Reservation Charge"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 08:50:38.924888",
- "modified_by": "ahmed.ramadan@sahl-tech.com",
+ "modified": "2026-03-07 11:53:20.470915",
+ "modified_by": "Administrator",
  "module": "Hotel",
  "name": "Reservation",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

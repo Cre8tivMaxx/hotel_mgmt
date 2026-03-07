@@ -1,14 +1,14 @@
-frappe.listview_settings['Room'] = {
+frappe.listview_settings["Room"] = {
     formatters: {
-        custom_base_rate: function(value, df, doc) {
+        custom_base_rate: function (value, df, doc) {
             let currency = doc.custom_currency || "";
             return `<span style="font-weight:600; color:#444;">
                         ${currency} ${value || ""}
                     </span>`;
-        }
+        },
     },
 
-    indicator: function(doc) {
+    indicator: function (doc) {
         if (doc.status === "Available") {
             return [__("Available"), "green", "status,=,Available"];
         } else if (doc.status === "Occupied") {
@@ -24,5 +24,5 @@ frappe.listview_settings['Room'] = {
         } else {
             return [__(doc.status || "Unknown"), "darkgrey", "status,=," + doc.status];
         }
-    }
+    },
 };

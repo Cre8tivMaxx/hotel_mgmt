@@ -16,4 +16,3 @@ frappe.ready(() => {
     `;
     document.head.appendChild(style);
 });
-

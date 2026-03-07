@@ -5,18 +5,50 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_ved0"
+  "section_break_ved0",
+  "default_room_item",
+  "column_break_settings1",
+  "walk_in_customer",
+  "column_break_settings2",
+  "hotel_warehouse"
  ],
  "fields": [
   {
    "fieldname": "section_break_ved0",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "default_room_item",
+   "fieldtype": "Link",
+   "label": "Default Room Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_settings1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "walk_in_customer",
+   "fieldtype": "Link",
+   "label": "Walk-in Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_settings2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hotel_warehouse",
+   "fieldtype": "Link",
+   "label": "Hotel Warehouse",
+   "options": "Warehouse"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2025-09-03 10:17:09.258711",
+ "modified": "2026-03-07 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "Hotel",
  "name": "Hotel Settings",

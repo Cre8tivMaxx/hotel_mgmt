@@ -145,8 +145,7 @@
   {
    "fieldname": "credit_limit",
    "fieldtype": "Currency",
-   "label": "Credit Limit",
-   "options": "\nCompany\nAgent\nIndividual"
+   "label": "Credit Limit"
   },
   {
    "fieldname": "column_break_wzxs",

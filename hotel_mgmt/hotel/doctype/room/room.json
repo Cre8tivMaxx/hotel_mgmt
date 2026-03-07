@@ -70,7 +70,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAvailable\nOccupied\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
+   "options": "\nAvailable\nOccupied\nDirty\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
   },
   {
    "fieldname": "column_break_vmel",
