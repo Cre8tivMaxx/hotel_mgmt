@@ -19,6 +19,10 @@ fixtures = [
     "Custom Field",
     "Property Setter",
     "Workspace",
+    {
+        "dt": "Role",
+        "filters": [["name", "in", ["Front Desk"]]],
+    },
     "Workflow State",
     "Workflow",
     "Client Script",
@@ -63,3 +67,5 @@ doctype_js = {
     "Room": "public/js/room_indicator.js",
     "Guest Profile": "public/js/guest_profile.js",
 }
+
+export_python_type_annotations = True

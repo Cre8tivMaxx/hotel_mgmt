@@ -1,0 +1,9 @@
+[
+ {
+  "doctype": "Role",
+  "name": "Front Desk",
+  "role_name": "Front Desk",
+  "desk_access": 1,
+  "is_custom": 1
+ }
+]
