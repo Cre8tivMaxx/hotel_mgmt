@@ -290,7 +290,7 @@ def daily_checkout_scheduler():
 
         reservations = frappe.get_all(
             "Reservation", filters={
-                "check_out_date": today,
+                "check_out_date": ("<=", today),
                 "status": ("!=", "Checked-out")
             },
             fields=["name", "customer"]
@@ -300,6 +300,7 @@ def daily_checkout_scheduler():
             if res.customer:
                 frappe.db.set_value("Customer", res.customer, "custom_room", None)
                 frappe.db.commit()
+                
 # ---------- Hello World ----------
 @frappe.whitelist()
 def hello_world():
