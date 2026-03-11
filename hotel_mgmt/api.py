@@ -291,7 +291,7 @@ def daily_checkout_scheduler():
         reservations = frappe.get_all(
             "Reservation", filters={
                 "check_out_date": ("<=", today),
-                "status": ("!=", "Checked-out")
+                # "status": ("!=", "Checked-out")
             },
             fields=["name", "customer"]
         )
