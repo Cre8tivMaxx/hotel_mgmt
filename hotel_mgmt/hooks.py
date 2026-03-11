@@ -50,6 +50,7 @@ scheduler_events = {
     "daily": [
         "hotel_mgmt.api.release_allotments",
         "hotel_mgmt.api.expire_hotel_contracts",
+        "hotel_mgmt.api.daily_checkout_scheduler",
     ],
     "hourly": [],
     "weekly": [],

@@ -284,7 +284,23 @@ def expire_hotel_contracts():
 
     frappe.db.commit()
 
+# auto customer room delete if reservation check out 
+def daily_checkout_scheduler():
+        today = getdate(nowdate())
 
+        reservations = frappe.get_all(
+            "Reservation", filters={
+                "check_out_date": ("<=", today),
+                "status": ("!=", "Checked-out")
+            },
+            fields=["name", "customer"]
+        )
+
+        for res in reservations:
+            if res.customer:
+                frappe.db.set_value("Customer", res.customer, "custom_room", None)
+                frappe.db.commit()
+                
 # ---------- Hello World ----------
 @frappe.whitelist()
 def hello_world():

@@ -49,12 +49,32 @@ class Reservation(Document):
     # end: auto-generated types
 
     def after_insert(self):
+        self.set_customer_room()
+    
+    def on_update(self):
+        self.update_customer_room()
+
+    def after_delete(self):
+        self.delete_customer_room()
+
+
+    
+    def set_customer_room(self):
         if not self.customer:
             frappe.throw("Customer must be set")
 
         frappe.db.set_value("Customer", self.customer, "custom_room", self.room)
+    
+    def delete_customer_room(self):
+        if not self.customer:
+            frappe.throw("Customer must be set")
+
+        frappe.db.set_value("Customer", self.customer, "custom_room", None)
 
 
-# CRUD
-# Update - check out date
-# Delete
+
+    def update_customer_room(self):
+        if not self.customer:
+            frappe.throw("Customer must be set")
+
+        frappe.db.set_value("Customer", self.customer, "custom_room", self.room)
