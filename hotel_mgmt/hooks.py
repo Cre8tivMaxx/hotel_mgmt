@@ -22,10 +22,30 @@ fixtures = [
     "Workflow",
     "Client Script",
     "Room Feature",
-    {
-        "dt": "DocType",
-        "filters": [["name", "in", ["Room"]]]
-    }
+    'Room',
+ 'Reservation',
+ 'rooms',
+ 'Room Feature',
+ 'Housekeeping',
+ 'Room Status Log',
+ 'Company Profile',
+ 'Hotel Contract',
+ 'Hotel Manual',
+ 'Room Type',
+ 'Guest Profile',
+ 'Rate Code',
+ 'Rate Plan Detail',
+ 'Meal Plan',
+ 'Rate Detail',
+ 'Group Profile',
+ 'Rooming List',
+ 'Travel Agent Profile',
+ 'Guest Preference Item',
+ 'Restaurant Order',
+ 'Restaurant Table',
+ 'Housekeeping Task',
+ 'Hotel Settings',
+    "Room",
 ]
 
 # Doc Events
