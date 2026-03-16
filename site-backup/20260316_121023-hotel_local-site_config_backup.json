@@ -1,0 +1,9 @@
+{
+ "allow_tests": true,
+ "db_host": "127.0.0.1",
+ "db_name": "_b24af2cd359da444",
+ "db_password": "root",
+ "db_type": "mariadb",
+ "developer_mode": 1,
+ "encryption_key": "btfLgAV6S0vynCdLRix6ugG1YBz5OMrhpj55K-s6a-c="
+}
