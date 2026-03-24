@@ -1,8 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-03-07 17:32:08.178305",
- "default_view": "List",
+ "creation": "2026-03-23 17:08:44.270994",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -69,7 +68,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nAvailable\nOccupied\nDirty\nInspected\nPickup\nOut of Service\nOut of Order\nReserved"
+   "options": "Available\nOccupied\nReserved"
   },
   {
    "fieldname": "column_break_vmel",
@@ -230,7 +229,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-10 08:39:56.078957",
+ "modified": "2026-03-24 13:36:29.670626",
  "modified_by": "Administrator",
  "module": "Hotel",
  "name": "Room",
