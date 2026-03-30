@@ -146,4 +146,5 @@ def execute(filters=None):
     )
 
     data = reservations
+    frappe.logger().info(reservations)
     return columns, data
