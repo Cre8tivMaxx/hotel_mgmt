@@ -95,12 +95,12 @@ frappe.query_reports["Rooms Overview"] = {
                         ${data.room_type}
                      </a>`;
         }
-        if (column.fieldname === "name") {
-            value = `<a href="/app/room-type/${data.name}" 
-                        style="font-weight:bold;color:#2563eb;">
-                        ${data.room_type}
-                     </a>`;
-        }
+        // if (column.fieldname === "name") {
+        //     value = `<a href="/app/room-type/${data.name}" 
+        //                 style="font-weight:bold;color:#2563eb;">
+        //                 ${data.room_type}
+        //              </a>`;
+        // }
 
         return value;
     },
