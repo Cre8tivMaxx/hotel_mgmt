@@ -48,11 +48,69 @@ class Reservation(Document):
         total_amount: DF.Currency
     # end: auto-generated types
 
+    # Link room with customer after reservation checked in
     def after_insert(self):
+        if not self.room:
+            frappe.throw("Room must be set")
+
+        room_status = frappe.db.get_value("Room", self.room, "status")
+        clean_status = frappe.db.get_value("Room", self.room, "clean_status")
+
+        if room_status != "Available":
+            frappe.throw("Room is not available")
+
+        if clean_status == "Dirty":
+            frappe.throw("Room must be clean before booking")
+
+        frappe.db.set_value("Room", self.room, {
+            "status": "Reserved",
+            "clean_status": "Clean"
+        })
+
+
+    def on_update(self):
+        frappe.msgprint(f"Reservation status now: {self.status}")
+
+        if self.status == "Checked-in":
+            if not self.room:
+                frappe.throw("Room must be set")
+
+            frappe.db.set_value("Room", self.room, {
+                "status": "Occupied",
+                "clean_status": "Dirty"
+            })
+
+            self.set_customer_room()
+
+
+    def on_update_after_submit(self):
+        frappe.msgprint(f"Reservation status now: {self.status}")
+
+        if self.status == "Checked-out":
+            if not self.room:
+                frappe.throw("Room must be set")
+
+            frappe.db.set_value("Room", self.room, {
+                "status": "Available",
+                "clean_status": "Dirty"
+            })
+
+            self.delete_customer_room()
+
+
+    def set_customer_room(self):
         if not self.customer:
             frappe.throw("Customer must be set")
 
         frappe.db.set_value("Customer", self.customer, "custom_room", self.room)
+
+
+    def delete_customer_room(self):
+        if not self.customer:
+            frappe.throw("Customer must be set")
+
+        frappe.db.set_value("Customer", self.customer, "custom_room", None)
+
 
 
 # CRUD
