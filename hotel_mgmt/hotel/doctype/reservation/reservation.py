@@ -48,6 +48,7 @@ class Reservation(Document):
         total_amount: DF.Currency
     # end: auto-generated types
 
+    # Link room with customer after reservation checked in
     def after_insert(self):
         self.set_customer_room()
     
