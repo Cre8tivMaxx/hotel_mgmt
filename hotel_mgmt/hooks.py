@@ -24,8 +24,6 @@ fixtures = [
     "Room Feature",
     "Room",
     "Reservation",
-    "rooms",
-    "Room Feature",
     "Housekeeping",
     "Room Status Log",
     "Company Profile",
@@ -45,36 +43,18 @@ fixtures = [
     "Restaurant Table",
     "Housekeeping Task",
     "Hotel Settings",
-    "Room",
 ]
 
-# Doc Events
+# Doc Events (Reservation & Housekeeping use controller methods directly)
 doc_events = {
-    "Reservation": {
-        "validate": "hotel_mgmt.api.reservation_validate",
-        "after_save": "hotel_mgmt.api.reservation_on_submit",
-        "on_update": "hotel_mgmt.api.reservation_on_update",
-        "on_cancel": "hotel_mgmt.api.reservation_on_cancel",
-    },
-    "Housekeeping": {  # housekeeping sync
-        "on_submit": "hotel_mgmt.api.housekeeping_on_submit",
-    },
     "Customer": {
-        "before_insert": "hotel_mgmt.custom.customer.set_customer_name",
         "validate": "hotel_mgmt.custom.customer.set_customer_name",
-        "before_save": "hotel_mgmt.custom.customer.set_customer_name",
     },
 }
 
 # Scheduler Events
 scheduler_events = {
     "daily": ["hotel_mgmt.api.release_allotments", "hotel_mgmt.api.expire_hotel_contracts"],
-    "hourly": [
-        # placeholder for hourly jobs (e.g., sync with channel manager)
-    ],
-    "weekly": [
-        # placeholder for weekly jobs (e.g., housekeeping audit, occupancy report)
-    ],
 }
 
 # Include JS & CSS

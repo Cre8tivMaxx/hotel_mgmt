@@ -1,8 +1,7 @@
 import frappe
 
-def set_customer_name(doc, method):
-    frappe.msgprint("✅ Hook Fired: set_customer_name")
 
+def set_customer_name(doc, method):
     salutation = doc.salutation or ""
     first = doc.custom_first_name or ""
     last = doc.custom_last_name or ""
