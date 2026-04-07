@@ -38,10 +38,24 @@
   "nightly_rate",
   "column_break_fclx",
   "total_amount",
+  "charges_section",
+  "reservation_charge",
   "section_break_swnr",
   "amended_from"
  ],
  "fields": [
+  {
+   "fieldname": "charges_section",
+   "fieldtype": "Section Break",
+   "label": "Charges"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reservation_charge",
+   "fieldtype": "Table",
+   "label": "Reservation Charges",
+   "options": "Reservation Charge"
+  },
   {
    "fieldname": "section_break_swnr",
    "fieldtype": "Section Break"
@@ -230,7 +244,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 08:50:38.924888",
+ "modified": "2026-04-07 12:00:00.000000",
  "modified_by": "ahmed.ramadan@sahl-tech.com",
  "module": "Hotel",
  "name": "Reservation",

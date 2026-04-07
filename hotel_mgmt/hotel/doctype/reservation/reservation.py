@@ -63,7 +63,7 @@ class Reservation(Document):
             ci = getdate(self.check_in_date)
             co = getdate(self.check_out_date)
 
-            if ci < getdate(nowdate()):
+            if not frappe.flags.in_import and ci < getdate(nowdate()):
                 frappe.throw(_("Check-in date cannot be in the past (earlier than today)."))
 
             self.nights = (co - ci).days
